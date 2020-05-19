@@ -1,0 +1,528 @@
+html{/*Codigo para corregir error de pading afectando anchura*/
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; /*Reset para REMS - 62.5%=10px de 16px*/
+
+}
+body{/*Se aplica a todos los elementos del body*/
+    /*Asi se ponen las familias de fuentes-->font-family: 'Courier New', Courier, monospace*/
+    font-family: 'Lato', sans-serif; /*Agregando fuente de GoogleFonts*/
+    font-size: 1.6rem;
+    line-height: 2; /*Interlineado*/
+}
+
+
+/** Utilidades **/
+.seccion{
+    margin-top: 2rem; /*Separacion arriba*/
+    margin-bottom: 2rem; /*Separacion abajo*/
+}
+.fw-300{
+    font-weight: 300; /*Poner mas clara la letra*/
+}
+.centrar-texto{
+    text-align: center; /*Centramos texto*/
+}
+.display-block{
+   display: block!important; /*El important hace que html ignore los demas display mientras se llame esta clase*/
+}
+.contenido-centrado{
+    max-width: 800px; /*Tamaño maximo a tomar*/
+}
+.fondo{
+    background-color: #333333;
+    color: #FFFFFF;
+    font-size: 3.4rem;
+    display: block;
+}
+
+
+
+/** Globales **/
+img{
+    max-width: 100%; /*Para que las imagenes sean responsive y se ajusten a los contenedores*/
+}
+.contenedor{
+    width: 95%; /*Toma el 95% del tamaño y deja un pequeño espacio*/
+    max-width: 120rem; /*Altura máxima 1200px*/
+    margin: 0 auto 0 auto /*Margen arriba,derecha,abajo,izquierda*/ 
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
+}
+.organizar-parrafo{
+    text-align: justify;
+}
+.organizar-titulo{
+    text-align: center;
+    line-height: 1.2;
+}
+.interlineado{
+    line-height: 1.2;
+}
+.centrar-imagen img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/** Utilidades **/
+.seccion{
+    margin-top: 2rem; /*Separacion arriba*/
+    margin-bottom: 2rem; /*Separacion abajo*/
+}
+.fw-300{
+    font-weight: 300; /*Poner mas clara la letra*/
+}
+.centrar-texto{
+    text-align: center; /*Centramos texto*/
+}
+.display-block{
+   display: block!important; /*El important hace que html ignore los demas display mientras se llame esta clase*/
+}
+.contenido-centrado{
+    max-width: 800px; /*Tamaño maximo a tomar*/
+}
+
+
+/** Botones **/
+.boton{
+    color: #FFFFFF; /*Color letra*/
+    font-weight: 700; /*Mas clara o oscuro la letra*/
+    text-decoration: none; /*Quitar decoraciones de la letra*/
+    font-size: 1.8rem; /*Tamaño del texto*/
+    padding: 1rem 3rem; /*Espacio hacia adentro(arriba derecha abajo izquierda)*/
+    margin-top: 1rem; /*Separacion arriba*/
+    /*Los enlaces tienen display Inline, pasarlos a block o Inline-block*/
+    display: inline-block;
+    text-align: center; /*Centrar texto*/
+    border: none; /*Quitamos bordo*/
+    display: block; /*Toma todo el espacio disponible*/
+    flex: 0 0 100%; /*Crecimiento, Encogimiento y base*/
+}
+@media (min-width: 768px) {
+    .boton{
+        display: inline-block; /*Para que tome bien los margin y paggins*/ 
+        flex: 0 0 auto; /*Crecimiento, Encogimiento y base*/
+    }
+}
+.boton:hover{
+    cursor: pointer; /*Aparece mano cuando paso el raton por el boton*/
+}
+.boton-amarillo{
+    background-color: #E08709; /*Color de fondo*/
+}
+.boton-gris{
+    background-color: #333333; /*Color de fondo*/
+}
+
+/** Header **/
+.site-header{
+    background-color: #333333; /*Color de fondo*/
+    padding: 1rem 0 3rem 0; /*Espacio hacia adentro*/
+}
+.site-header.inicio{
+    background-image: url(../img/header.jpeg);/*Imagen de fondo*/
+    background-position: center center; /*Muestra y expande imagen desde el centro*/
+    background-size: cover; /*Toma alto y ancho que hay disponible para la imagen*/
+    height: 100vh; /*Tamaño maximo imagen*/
+    min-height: 60rem; /*Tamaño minimo imagen*/
+}
+.contenido-header{
+    height: 100%; /*Toma todo el tamaño disponible*/
+    display: flex; /*Todo lo demas tratalo como es, solo afecta a primeros hijos*/
+    flex-direction: column; /*Especifica como colocar los objetos flexibles en el contenedor*/
+    justify-content: space-between; /*Alinear uno arriba y uno abajo*/
+    text-align: center; /*Contenido centrado*/
+}
+@media (min-width: 768px) {
+    .contenido-header{
+        text-align: left; /*Contenido a la izquierda*/
+    }
+}
+.contenido-header h1{
+    color: #ffffff; /*Color de la letra*/
+    padding-bottom: 2rem; /*Espacio hacia adentro del elemento*/
+    max-width: 60rem; /*Definiendo tamaño maximo*/
+    line-height: 1.2; /*Interlineado de 1 renglon*/
+    font-size: 4rem;
+}
+.barra{
+    padding-top: 3rem;/*Espacio hacia adentro del elemento(Similar a margen)*/
+}
+@media (min-width: 768px) {
+    .barra{
+        display: flex; /*Todo lo demas tratalo como es, solo afecta primer hijo*/
+        justify-content:space-between; /*Alinear elementos*/
+        align-items: flex-start; /*Alinear elementos*/
+    }
+}
+
+
+
+
+/** Navegacion **/
+.navegacion a{/*Estoy seleccionando la clase y sus hijos (a)*/
+    color: #ffffff; /*Color a la letra*/
+    text-decoration: none; /*Sirve para modificar la decoracion de la letra*/
+    font-size: 2.2rem; /*Tamaño fuente*/
+    display: block; /*Posiciona cada elemento en una linea*/
+}
+@media (min-width: 768px) {
+    .navegacion a{
+        display: inline-block; /*Vuelve a su posicion*/
+        font-size: 2.2rem; /*Tamaño fuente*/
+        margin-right: 2rem; /*Separacion con siguiente elemento*/
+    }
+    .navegacion a:last-of-type{/*Seleccionando ultimo elemento*/
+        margin-right: 0;
+    }
+}
+.navegacion a:hover{/*Efectos al pasar mouse por las etiquetas de navegacion*/
+    color: #686463; /*Color de la letra*/
+}
+
+.navegacion2 a{/*Estoy seleccionando la clase y sus hijos (a)*/
+    color: #ffffff; /*Color a la letra*/
+    text-decoration: none; /*Sirve para modificar la decoracion de la letra*/
+    font-size: 2.2rem; /*Tamaño fuente*/
+    display: block; /*Posiciona cada elemento en una linea*/
+}
+@media (min-width: 768px) {
+    .navegacion2 a{
+        display: inline-block; /*Vuelve a su posicion*/
+        font-size: 2.2rem; /*Tamaño fuente*/
+        margin-right: 2rem; /*Separacion con siguiente elemento*/
+    }
+    .navegacion2 a:last-of-type{/*Seleccionando ultimo elemento*/
+        margin-right: 0;
+    }
+}
+.navegacion2 a:hover{/*Efectos al pasar mouse por las etiquetas de navegacion*/
+    color: #686463; /*Color de la letra*/
+}
+
+
+/** Texto header **/
+.texto-header{
+    color: #ffffff; /*Color letra*/
+    text-align: center; /*Centrar texto*/
+    margin-top: 5rem; /*Separacion arriba*/
+}
+@media (min-width: 768px) {/*Eso se aplica solo en tables y PCs el resto en celulares*/
+    .texto-header{
+        margin-top: 15rem; /*Separacion arriba*/
+        
+    }
+}
+.texto-header p{
+    font-size: 2.2rem; /*Tamaño letra*/
+}
+
+
+/** Mobile Menu**/
+.navegacion{
+    display: block;; /*Va a estar oculta*/
+}
+@media (min-width: 768px) {
+    .navegacion{
+        display: block; /*Mostramos navegacion*/
+    }
+}
+
+
+/** Iconos Nosotros**/
+@media (min-width: 768px) {
+    .iconos-nosotros{
+        display: flex; /*Posiciona elementos uno frente al otro*/
+        justify-content: space-between; /*Alinear elementos*/
+    } 
+}
+.icono{
+    text-align: center; /*Alineamos elementos en el centro*/
+}
+@media (min-width: 768px) {
+    .icono{
+        /*Calc sirve para hacer operaciones*/
+    flex-basis: calc(33.3% - 1rem); /*Base elemento (cada elemento mide eso)*/
+    }
+}
+.icono h3{
+    text-transform: uppercase; /*Modificar letra a mayuscula*/
+    margin: 1rem auto 1rem auto;
+}
+
+
+/** Anuncios **/
+@media (min-width: 768px) {
+    .contenedor-anuncios{
+        display: flex; /*Posiciona elementos uno al frente del otro*/
+        justify-content: space-between; /*Alineamos elementos en el centro*/
+        flex-wrap: wrap; /*Para dividir los contenidos en 2 bloques*/
+    } 
+}
+.anuncio{
+    border: 1px solid #B5B5B5; /*Border (grosor, estilo, color)*/
+    background: #F5F5F5; /*Color al fondo*/
+    margin: 1rem 0 1rem 0; /*Separacion hacia afuera*/
+}
+@media (min-width: 768px) {
+    .anuncio{
+        flex-grow: 0; /*Si hay espacio disponible el contenido puede va a crecer */
+        flex-shrink: 0; /*Para que no se encoja y tome el tamaño de la base*/
+        flex-basis: calc(33.3% - 1rem); /*Base elemento (cada elemento mide eso)*/
+    }
+}
+.contenido-anuncio{
+    padding: 2rem 2rem 2rem 2rem; /*Espacio hacia adentro(arriba derecha abajo izquierda)*/
+}
+.contenido-anuncio h3, .contenido-anuncio p{
+    margin: 0; /*Margen de los h3*/
+}
+.precio{
+    color: #71b100; /*Color de la letra*/
+    font-weight: 700; /*Poner claro o mas oscuro la letra*/
+}
+.iconos-caracteristicas{
+    list-style: none; /*Decoracion viñeta icono*/
+    padding: 0;/*Remueve espacio de los iconos*/
+    display: flex; /*Alinea los elementos uno frente al otro*/
+    justify-content: space-evenly; /*Alineamos elementos*/
+    flex: 1; /*Factor de crecimiento divide tamaño en numero de elementos*/
+    max-width: 50rem; /*Definir rango para que quede comprimido*/
+}
+.iconos-caracteristicas li{
+    display: flex; /*Alinea los elementos uno frente al otro*/
+}
+.iconos-caracteristicas li img{
+    margin-right: 2rem; /*Agrega separacion a la derecha del item*/
+}
+.ver-todas{
+    display: flex; /*Posiciona elementos uno al frente del otro*/
+    justify-content: flex-end; /*Alineamos elementos en la derecha*/
+}
+
+
+/** Contacto Home**/
+.imagen-contacto{
+    background-image: #1111;/*Imagen de fondo*/
+    background-position: center center;/*Posicionamiento de imagen*/
+    background-size: cover; /*La imagen se ve mejor*/
+    height: 40rem; /*Altura de imagen*/
+    display: flex; /*Posiciona elementos uno al frente del otro*/
+    align-items: center; /*Centrar elementos*/
+}
+.contenido-contacto{
+    flex: 0 0 95%; /*Crecimiento, Encogimiento y base*/
+    color: #FFFFFF; /*Color letra*/
+}
+.contenido-contacto p{
+    font-size: 1.8rem; /*Tamaño letra*/
+}
+.contenedor-contacto{
+    margin: 1rem auto 1rem auto; /*Margen arriba,derecha,abajo,izquierda*/
+}
+
+
+/** Seccion Inferior **/
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display: flex; /*Posiciona un elemento frente al otro*/
+        justify-content: space-between; /*Alineamos items en el centro*/
+    }
+    .seccion-inferior .blog{
+        flex-basis: 60%; /*La base toma el 60% del espacio total*/
+    
+    }
+    .seccion-inferior .testimoniales{
+        flex-basis: calc(40% - 2rem); /*La base toma el 40% del espacio total y añade un espacio de 20px*/
+    } 
+}
+
+.entrada-producto{
+    margin-bottom: 2rem; /*Separa un elemento del otro*/
+}
+@media (min-width: 768px) {
+    .entrada-producto{
+        display: flex; /*Posiciona un elemento frente al otro*/
+        justify-content: space-between; /*Alineamos items en el centro*/ 
+    }
+}
+.entrada-producto:last-of-type{
+    margin-bottom: 0;/*Para que el ultimo elemento no tenga separacion*/
+}
+@media (min-width: 768px) {
+    .entrada-producto .imagen{
+        flex-basis: 40%; /*La base de la imagen toma 40% del espacio total*/
+    }
+    .entrada-producto .texto-entrada{
+        flex-basis: calc(60% - 3rem);/*La base del texto toma un 60% del espacio y agrega un espacio de 30px*/
+    }
+}
+
+.texto-entrada a{
+    color: #000000;/*Color a la letra enlace*/
+    text-decoration: none; /*Quitar decoracion letra*/
+}
+.texto-entrada h4{
+    margin: 0; /*Elimina margen del h4*/
+    line-height: 1.4; /*Interlineado*/
+}
+.texto-entrada h4::after{/*Creeme un elemento despues del h4*/
+    content: ''; /*Crea elemento que no diga nada*/
+    display: block; /*Ya que no tiene display definido*/
+    width: 15rem; /*Ancho*/
+    height: 0.5rem; /*Altura*/
+    background-color: #333333; /*Color de fondo*/
+    margin-top: 1rem; /*Margen arriba*/
+}
+.texto-entrada span{
+    color: #E08709; /*Color a la letra*/
+}
+
+
+/** Footer **/
+.site-footer{
+    background-color: #333333; /*Color de fondo*/
+    margin: 0; /*Eliminanos margen*/
+}
+.site-footer p{
+    color: #ffffff;
+    font-size: 1.8rem; /*Tamaño letra*/
+    margin: 1rem 0 1rem 0;
+}
+.contenedor-footer{
+    padding: 3rem 0rem 3rem 0rem;/*Espacio hacia adentro (arriba, derecha, abajo, izquierda)*/
+    text-align: center; /*Alinea elementos en el centro*/
+}
+@media (min-width: 768px) {
+    .contenedor-footer{
+        display: flex;/*Posiciona un elemento frente al otro*/
+        justify-content: space-between; /*Alinea un elemento a la izquierda y otro a la derecha*/
+    }
+}
+.navegacion nav{
+    display: none;
+}
+.icono a{
+    margin-right: 2rem;
+}
+.icono a:last-of-type{
+    margin-right: 0;
+}
+.icono img{
+    border-radius: 5rem;
+}
+.borde img{
+    border-radius: 0%;
+}
+
+@media (min-width: 768px) {
+    .site-footer nav{
+        display: block; /*Mostramos el elemento*/
+    }
+}
+.copyright{
+    margin: 0; /*Eliminamos margen*/
+    color: #FFFFFF; /*Color letra*/
+    
+}
+
+
+/** PAGINAS INTERNAS **/
+/** Nosotros **/
+@media (min-width: 768px) {
+    .contenido-nosotros{
+        display: grid; /*Posiciona elementos uno frente al otro*/
+        grid-template-columns: repeat(2,1fr);/*2 columnas de fracciones iguales*/ 
+        grid-column-gap: 2rem; /*Agrega separacion en cada columna*/
+    }
+}
+
+.texto-nosotros blockquote{
+    font-weight: 900; /*Fuente mas gruesa*/
+    font-size: 2rem; /*Tamaño letra*/
+    margin: 0; /*Eliminamos margen*/
+    padding: 1rem 0 1rem 0; /*Espacio o margen hacia adentro*/
+}
+
+
+/** Anuncio **/
+.resumen-propiedad{
+    display: flex; /*Posiciona elementos uno frente al otro*/
+    justify-content: space-between; /*Alinea un elemento a la izquierda y otro a la derecha*/
+    align-items: center; /*Alinea verticalmente en el centro*/
+}
+
+
+/** Contacto **/
+.formulario-contacto p{
+    font-size: 1.5rem; /*Tamaño letra*/
+    color: #4F4F4F; /*Color letra*/
+    margin: 2rem 0 0 0; /*Margen arriba, derecha, abajo, izquierda*/
+}
+legend{
+    font-size: 2rem; /*Tamaño letra*/
+    color: #4F4F4F; /*Color letra*/
+}
+label{
+    font-weight: 700; /*Poner mas oscura la letra*/
+    text-transform: uppercase; /*Pasar a mayusculas*/
+    display: block; /*Para que tomen todo el espacio disponible*/
+}
+/*Se usa el type para que solo afecte ese tipo de input*/
+input:not([type="submit"]){ /*Aplica a todos menos al tipo submit*/
+    padding: 1rem; /*Espacio hacia adentro*/
+    display: block; /*Ya no tiene displat definido*/
+    width: 100%; /*Anchura*/
+    background-color: #E1E1E1; /*Color de fondo*/
+    margin-bottom: 2rem; /*Espacio abajo*/
+    border: none; /*Quitar borde*/
+    border-radius: 1rem; /*Ovalar esquinas*/
+}
+input[type="radio"]{/*Aplica solo al estilo radio*/
+    width: auto; /*Aplica la anchura automaticamente*/
+    margin: 0; /*Quitamos margen*/
+}
+textarea{
+    padding: 1rem; /*Espacio hacia adentro*/
+    display: block; /*Ya no tiene displat definido*/
+    width: 100%; /*Anchura*/
+    background-color: #E1E1E1; /*Color de fondo*/
+    margin-bottom: 2rem; /*Espacio abajo*/
+    border: none; /*Quitar borde*/  
+    height: 20rem; /*Altura*/
+    border-radius: 1rem; /*Ovalar esquinas*/
+}
+select{
+    padding: 1rem; /*Espacio hacia adentro*/
+    display: block; /*Ya no tiene displat definido*/
+    width: 100%; /*Anchura*/
+    background-color: #E1E1E1; /*Color de fondo*/
+    margin-bottom: 2rem; /*Espacio abajo*/
+    border: none; /*Quitar borde*/
+    border-radius: 1rem; /*Ovalar esquinas*/
+    /*Para poder dar paggind al selector*/
+    -webkit-appearance: none;
+    appearance: none;
+}
+.forma-contacto{
+    max-width: 30rem; /*Maxima anchura*/
+    display: flex; /*Posicionamos un elemento frente al otro*/
+    justify-content: space-between; /*Alineamos items uno a izquierda otro a derecha*/
+    align-items: center; /*Alineamos items verticalmente*/
+}

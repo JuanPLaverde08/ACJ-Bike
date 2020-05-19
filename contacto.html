@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!--Indica como se comunica la pagina con el navegador-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A.C.J Bike</title>
+    <!--Agregando la fuente descargada de GoogleFonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <!--Agregando la normalizacion a la página-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--Agregando el estilo CSS a la pagina-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--El id sirve para diferencias este header de otros, en CSS-->
+    <header class="site-header"><!--La division Header es para la parte superior de la página-->
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="index.html">
+                    <!--Asi se suben imagenes-->
+                    <!--Src ubicacion, alt texto alternativo si no carga imagen-->
+                    <img src="img/logo.png" alt="Logotipo Empresa">
+                </a>
+                <nav id="navegacion" class="icono">
+                <a href="https://www.facebook.com/juanplaverde123" target="_blank">
+                    <img src="img/fbnormal.png" alt="Logo facebook">
+                </a>
+                <a href="https://wa.link/krj4kc" target="_blank">
+                    <img src="img/wpnormal.png" alt="Logo wpp">
+                </a>
+                <a href="https://www.instagram.com/juanplaverdeh/" target="_blank">
+                    <img src="img/instanormal.png" alt="Logo instagram">
+                </a>
+            </nav>
+
+                <nav id="navegacion" class="navegacion"><!--La division Nav es para los enlaces de navegación-->
+                    <!--Enlaces de navegacion-->
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="inscripcion.php">Inscribete al evento</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <h1 class="fw-300 centrar-texto">Contacto</h1>
+
+    <main class="contenedor seccion contenido-centrado">
+        <h2 class="fw-300 centrar-texto fondo">Llena el formulario de Contacto</h2>    
+        <!--Todos los campos que esten dentro del form se pueden leer con PHP o JS-->
+        <form class="formulario-contacto" action="send.php" method="POST"><!--Crear formulario con Form-->
+            <fieldset><!--Agrupando campos relacionados-->
+                <legend>Información Personal</legend><!--Titulo del grupo de campos-->
+                <!--Etiqueta texto-->
+                <label for="nombre">Nombre: </label><!--Nombre a la etiqueta-->
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required><!--Formulario tipo texto, placeholder para sugerencias en la caja de texto, required campo obligatorio-->
+                
+                <!--Etiqueta email-->
+                <label for="email">E-mail: </label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+                <!--Etiqueta telefono-->
+                <label for="telefono">Telefono: </label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu télefono">
+
+                <!--Text Area-->
+                <label for="mensaje">Mensaje: </label>
+                <textarea name="mensaje" id="mensaje" placeholder="Digita tu mensaje aquí"></textarea><!--Creacion de caja de texto para que usuario digite mensaje-->
+            </fieldset>
+
+            <fieldset>
+                <legend>Contacto</legend>
+                <p>Cómo desea ser contactado: </p>
+                <div class="forma-contacto">
+                    <!--Etiqueta radioButtons-->
+                    <label for="telefono">Teléfono</label>
+                    <input type="radio" name="contacto" value="telefono"id="telefono">
+
+                    <label for="correo">E-mail</label>
+                    <input type="radio" name="contacto" value="correo" id="correo">
+                </div>
+                
+                <p>Elija fecha y hora para ser contactado: </p>
+            
+                <!--Etiqueta fecha-->
+                <label for="fecha">Fecha: </label>
+                <input type="date" name="fecha" id="fecha">
+
+                <!--Etiqueta hora-->
+                <label for="hora">Hora: </label>
+                <input type="time" name="hora" id="hora" min="08:00" max="17:00" step="3600"><!--Elegimos hora minima y máxima-->
+            </fieldset>
+          
+            
+            <!--Etiqueta enviar-->
+            <input type="submit" value="Enviar" class="boton boton-gris">
+            
+
+        </form>
+    </main>
+
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <p>juan_laverde82162@elpoli.edu.co<br>(+57) 3226140689</br></p>
+            <nav id="navegacion" class="icono">
+                <a href="https://www.facebook.com/juanplaverde123" target="_blank">
+                    <img src="img/fbnormal.png" alt="Logo facebook">
+                </a>
+                <a href="https://wa.link/krj4kc" target="_blank">
+                    <img src="img/wpnormal.png" alt="Logo wpp">
+                </a>
+                <a href="https://www.instagram.com/juanplaverdeh/" target="_blank">
+                    <img src="img/instanormal.png" alt="Logo instagram">
+                </a>
+            </nav>
+            <p>Carera 73 # 43-20 (Medellin - Antioquia)</p>
+        </div>
+    </footer>
+</body>
+</html>
